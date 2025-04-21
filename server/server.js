@@ -8,7 +8,7 @@ import Connection from './database/db.js';
 
 dotenv.config();
 const app = express();
-const PORT = 8000;
+const PORT = process.env.PORT || 8000;
 
 app.use(cors());
 app.use(bodyParser.json({ extended: true }));
