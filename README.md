@@ -15,5 +15,5 @@ This is a MERN stack project consisting of two parts:
 
 #### Clone the repository
 ```bash
-git clone <repository-url>
+git clone https://github.com/Rit014/MERN-PROJEC.git
 cd MERN-PROJECT
