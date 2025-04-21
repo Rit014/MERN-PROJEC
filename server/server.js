@@ -10,19 +10,24 @@ dotenv.config();
 const app = express();
 const PORT = process.env.PORT || 8000;
 
-app.use(cors());
+// CORS setup to allow your frontend URL
+app.use(cors({
+  origin: "https://blogpage-xsj0.onrender.com", // Replace with your frontend URL
+  methods: ["GET", "POST", "PUT", "DELETE"],
+  credentials: true
+}));
+
 app.use(bodyParser.json({ extended: true }));
 app.use(bodyParser.urlencoded({ extended: true }));
 
 // 🛠 Fix for __dirname on Windows
 const __dirname = path.dirname(new URL(import.meta.url).pathname).replace(/^\/([a-zA-Z]):/, '$1:');
 
-// Serve static files from the React app
+// Serve static files from the React app in production
 if (process.env.NODE_ENV === 'production') {
-  // Serve static files from the React build directory
   app.use(express.static(path.join(__dirname, 'Blog', 'build')));
 
-  // For any route that doesn't match an API route, serve the React index.html
+  // Serve index.html for any route that doesn't match an API route
   app.get('*', (req, res) => {
     res.sendFile(path.join(__dirname, 'Blog', 'build', 'index.html'));
   });
