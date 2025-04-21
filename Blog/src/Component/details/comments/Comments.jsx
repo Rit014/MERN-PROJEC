@@ -10,7 +10,7 @@ import { useTheme } from "@mui/material/styles";
 import { DataContext } from "../../../context/DataProvider";
 import API from "../../../service/api.js";
 import { toast } from "react-toastify";
-import Comment from "./comment.jsx";
+import Comment from "./Comment.jsx";
 
 const Container = styled(Box)`
   margin-top: 80px;
