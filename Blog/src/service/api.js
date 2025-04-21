@@ -3,7 +3,7 @@ import { API_NOTIFICATION_MESSAGES } from '../constants/config.js';
 import { SERVICE_URLS } from '../constants/config.js';
 import { getType } from '../utils/common-utils.js';
 
-const API_URL = 'http://localhost:8000';  // Replace with your backend URL
+const API_URL = 'https://mern-projec-2.onrender.com/'; // Replace with your backend URL
 
 const axiosInstance = axios.create({
     baseURL: API_URL,
