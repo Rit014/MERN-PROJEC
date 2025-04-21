@@ -4,7 +4,7 @@ import { Link, useNavigate, useParams } from 'react-router-dom';
 import API from '../../service/api.js';
 import { Edit, Delete } from '@mui/icons-material';
 import { DataContext } from '../../context/DataProvider.jsx';
-import Comments from './comments/comments.jsx';
+import Comments from './comments/Comments.jsx'
 
 const Container = styled(Box)(({ theme }) => ({
   margin: '0 20px',
