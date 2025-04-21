@@ -5,8 +5,7 @@
   "main": "index.js", 
   "type": "module",
   "scripts": {
-    "start": "node server.js",
-    "postinstall": "npm install"
+    "start": "node server.js"
   },
   "author": "",
   "license": "ISC",
@@ -21,7 +20,7 @@
     "gridfs-stream": "^1.1.1",
     "jsonwebtoken": "^9.0.2",
     "mongoose": "^8.13.2",
-    "multer": "^1.4.5-lts.2",
+    "multer": "1.4.4",
     "multer-gridfs-storage": "^4.2.0",
     "multer-storage-cloudinary": "^4.0.0"
   },
