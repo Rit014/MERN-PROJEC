@@ -2,8 +2,8 @@
 
 ## Description
 This is a MERN stack project consisting of two parts:
-1. **Frontend (Blog)**: Built with React.js and deployed using Netlify/Vercel.
-2. **Backend (Server)**: Built using Node.js and Express, deployed on Heroku/DigitalOcean.
+1. **Frontend (Blog)**: Built with React.js and deployed using Render.
+2. **Backend (Server)**: Built using Node.js and Express, deployed on Render.
 
 ## Getting Started
 
