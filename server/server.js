@@ -21,10 +21,6 @@ app.use(bodyParser.urlencoded({ extended: true }));
 
 const __dirname = path.dirname(new URL(import.meta.url).pathname).replace(/^\/([a-zA-Z]):/, '$1:');
 
-// API routes FIRST
-app.use('/', Router);
-
-// Serve uploads
 // Serve uploads
 const uploadPath = path.join(__dirname, 'uploads');
 app.use('/uploads', express.static(uploadPath));
