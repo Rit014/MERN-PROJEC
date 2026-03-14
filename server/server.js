@@ -25,14 +25,18 @@ const __dirname = path.dirname(new URL(import.meta.url).pathname).replace(/^\/([
 app.use('/', Router);
 
 // Serve uploads
+// Serve uploads
 const uploadPath = path.join(__dirname, 'uploads');
 app.use('/uploads', express.static(uploadPath));
 
-// Serve React in production
+// API routes
+app.use('/', Router);
+
+// Serve React
 if (process.env.NODE_ENV === 'production') {
   app.use(express.static(path.join(__dirname, 'Blog', 'build')));
 
-  app.get('/*', (req, res) => {
+  app.get('*', (req, res) => {
     res.sendFile(path.join(__dirname, 'Blog', 'build', 'index.html'));
   });
 }
