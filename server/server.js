@@ -21,21 +21,12 @@ app.use(bodyParser.urlencoded({ extended: true }));
 
 const __dirname = path.dirname(new URL(import.meta.url).pathname).replace(/^\/([a-zA-Z]):/, '$1:');
 
-// Serve uploads
+// serve uploads
 const uploadPath = path.join(__dirname, 'uploads');
 app.use('/uploads', express.static(uploadPath));
 
 // API routes
 app.use('/', Router);
-
-// Serve React
-if (process.env.NODE_ENV === 'production') {
-  app.use(express.static(path.join(__dirname, 'Blog', 'build')));
-
-  app.get('*', (req, res) => {
-    res.sendFile(path.join(__dirname, 'Blog', 'build', 'index.html'));
-  });
-}
 
 Connection();
 
