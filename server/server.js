@@ -11,7 +11,10 @@ const app = express();
 const PORT = process.env.PORT || 8000;
 
 app.use(cors({
-  origin: "https://blogpage-xsj0.onrender.com",
+  origin: [
+    "http://localhost:5173",
+    "https://blogpage-xsj0.onrender.com"
+  ],
   methods: ["GET", "POST", "PUT", "DELETE"],
   credentials: true
 }));
@@ -21,11 +24,9 @@ app.use(bodyParser.urlencoded({ extended: true }));
 
 const __dirname = path.dirname(new URL(import.meta.url).pathname).replace(/^\/([a-zA-Z]):/, '$1:');
 
-// serve uploads
 const uploadPath = path.join(__dirname, 'uploads');
 app.use('/uploads', express.static(uploadPath));
 
-// API routes
 app.use('/', Router);
 
 Connection();
